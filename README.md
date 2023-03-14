@@ -24,3 +24,20 @@ Los iconos de Material-ui se instalan asi:
     
     npm install @material-ui/icons
  
+### `Publicacion`
+
+Tuve problemas para publicarlo con Vercel ,por lo que lo hice
+con un sitio mas conocido como netlify (netlify.com)
+
+Para poder hacerlo se requiere los siguientes pasos.
+
+1- En la terminar crear la carpeta a publicar con el comando 
+npm run build
+2- Al terminar se genera en el proyecto una carpeta de nombre "build"
+3- Acceder a netlify.con, registrarse e iniciar sesion
+4- Arrastrar la carpeta en la seccion de deply manual
+5- Al subirse muestra la liga del proyecto
+6- De forma opcional se uede comprar un dominio o bien usar u no propio para la publicacion final
+
+En el caso de este proyecto, la ruta es la siguiente:
+https://prismatic-boba-6ab6d1.netlify.app

@@ -10,10 +10,9 @@ import { useEffect } from 'react';
 import { actionTypes } from './reducer';
 import { useStateValue } from "../src/StateProvider"
 import { auth } from "../src/firebase";
-import { onAuthStateChanged } from 'firebase/auth'
 
 function App() {
-  const [{ user }, dispatch] = useStateValue();
+  const [dispatch] = useStateValue();
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
@@ -30,7 +29,7 @@ function App() {
         });
       }
     });
-  }, []);
+  }, );
 
   return (
     <Router>

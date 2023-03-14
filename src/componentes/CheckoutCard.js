@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
@@ -7,25 +6,13 @@ import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from "@material-ui/core/styles";
-import { red } from '@mui/material/colors';
 import DeleteIcon from '@material-ui/icons/Delete'
 import { actionTypes } from "../reducer";
 import { useStateValue } from '../StateProvider'
-
-import { AddShoppingCart, Delete, FormatAlignJustify } from '@material-ui/icons';
 import accounting from 'accounting';
 
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,13 +37,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CheckoutCard({
     product : {id, name, productType, image, price, rating, description}}) {
-  const [expanded, setExpanded] = React.useState(false);
-  const [{basket}, dispatch] =useStateValue();
+  const [ {basket} , dispatch] =useStateValue();
   const classes = useStyles();
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
 
   const removeItem = () => dispatch({
     type: actionTypes.REMOVE_ITEM,
